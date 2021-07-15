@@ -1387,6 +1387,7 @@ def plot_turnover(returns, transactions, positions, turnover_denom='AGB',
     ax.set_ylim((0, 2))
     ax.set_ylabel('Turnover')
     ax.set_xlabel('')
+
     return ax
 
 
