@@ -696,6 +696,14 @@ def create_position_tear_sheet(returns, positions,
     for ax in fig.axes:
         plt.setp(ax.get_xticklabels(), visible=True)
 
+    for ax in fig.axes:
+        ax.tick_params(
+            axis='x',  # changes apply to the x-axis
+            which='both',  # both major and minor ticks are affected
+            bottom=True,
+            top=False,
+            labelbottom=True)  # labels along the bottom edge are on
+
     if return_fig:
         return fig
 
