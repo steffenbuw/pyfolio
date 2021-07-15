@@ -339,11 +339,14 @@ def create_simple_tear_sheet(returns,
     ax_rolling_returns = plt.subplot(gs[:2, :])
     i = 2
     if benchmark_rets is not None:
-        ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+        # ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+        ax_rolling_beta = plt.subplot(gs[i, :])
         i += 1
-    ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    # ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_sharpe = plt.subplot(gs[i, :])
     i += 1
-    ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    # ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_underwater = plt.subplot(gs[i, :])
     i += 1
 
     plotting.plot_rolling_returns(returns,
@@ -354,7 +357,8 @@ def create_simple_tear_sheet(returns,
     ax_rolling_returns.set_title('Cumulative returns')
 
     if benchmark_rets is not None:
-        plotting.plot_rolling_beta(returns, benchmark_rets, ax=ax_rolling_beta)
+        # plotting.plot_rolling_beta(returns, benchmark_rets, ax=ax_rolling_beta)
+        plotting.plot_rolling_beta(returns, benchmark_rets)
 
     plotting.plot_rolling_sharpe(returns, ax=ax_rolling_sharpe)
 
@@ -490,25 +494,31 @@ def create_returns_tear_sheet(returns, positions=None,
     ax_rolling_returns = plt.subplot(gs[:2, :])
 
     i = 2
-    ax_rolling_returns_vol_match = plt.subplot(gs[i, :],
-                                               sharex=ax_rolling_returns)
+    # ax_rolling_returns_vol_match = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_returns_vol_match = plt.subplot(gs[i, :])
     i += 1
-    ax_rolling_returns_log = plt.subplot(gs[i, :],
-                                         sharex=ax_rolling_returns)
+    # ax_rolling_returns_log = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_returns_log = plt.subplot(gs[i, :])
     i += 1
-    ax_returns = plt.subplot(gs[i, :],
-                             sharex=ax_rolling_returns)
+    # ax_returns = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_returns = plt.subplot(gs[i, :])
+
     i += 1
     if benchmark_rets is not None:
-        ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+        # ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+        ax_rolling_beta = plt.subplot(gs[i, :])
         i += 1
-    ax_rolling_volatility = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    # ax_rolling_volatility = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_volatility = plt.subplot(gs[i, :])
     i += 1
-    ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    # ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_sharpe = plt.subplot(gs[i, :])
     i += 1
-    ax_drawdown = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    # ax_drawdown = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_drawdown = plt.subplot(gs[i, :])
     i += 1
-    ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    # ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_underwater = plt.subplot(gs[i, :])
     i += 1
     ax_monthly_heatmap = plt.subplot(gs[i, 0])
     ax_annual_returns = plt.subplot(gs[i, 1])
